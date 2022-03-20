@@ -4,7 +4,8 @@ const { joinVoiceChannel, createAudioPlayer, createAudioResource, entersState, V
 
 const joinChannel = function(channel){
     const player = createAudioPlayer();
-    const stringSong = path.join(process.cwd(), 'resources', 'scoobyDooOpening.mp3')
+    const music = process.env.PATHSONG
+    const stringSong = path.join(process.cwd(), 'resources', music)
     const resource = createAudioResource(stringSong)
     player.play(resource)
     const connection = joinVoiceChannel({
